@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?		family=Bebas+Neue&family=Handlee&family=Montserrat:wght@300;400&family=Roboto:wght@300;400&family=Space+Mono&display=swap" rel="stylesheet">
+  <title> Employees </title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;  
+    }
+
+    main {
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      flex: 1 0;
+      width: 100%;
+    }
+
+    main table{
+      width: 100%;
+      max-width: 500px;
+      
+    }
+
+    main table td {
+      padding: 0.5rem;
+    }
+
+    main table tbody tr:nth-child(odd){
+      background: #eee;
+    }
+
+    footer {
+      background-color: indigo;
+      padding: 1rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: white;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th> Usuario </th>
+          <th> Nombre </th>
+          <th> Apellido </th>
+          <th> Fecha de registro </th>
+          <th> Fecha de contratación </th>
+          <th> Estado </th>
+          <th> Rol </th>
+        </tr>
+      </thead>
+      <tbody>
+		  {{#employees}}
+          <tr>
+          	<td> {{ username }} </td>
+            <td> {{ name }} </td>
+            <td> {{ lastName }} </td>
+            <td> {{ hiringDate }} </td>
+            <td> {{ status }} </td>
+            <td> {{ role }} </td>
+          </tr>
+          {{/employees}}
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
